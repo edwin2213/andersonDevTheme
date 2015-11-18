@@ -1,0 +1,405 @@
+/*
+Theme Name: sasso 
+Theme URI: http://www.rosemontdev.com/sasso
+Description: A custom theme built by the team at Rosemont Media.
+Author: Rosemont Media
+Version: 1.0
+Tags: 
+*/
+@import '_reset.scss';
+
+/****************************************************************/
+/* --------------------- Utility Classes  -------------------- */
+/**************************************************************/
+
+.clear	{ //apply to elements besides div to clear previous content
+	clear:both;
+}
+
+div.clear { //hackery
+	height:.01em;
+	overflow:hidden;
+}
+
+.no-clear { clear: none; }
+
+.inline-block { display: inline-block; }
+
+body.lt-ie9 .inline-block{
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+}
+
+.alignleft {
+	float:left;
+}
+
+.alignright {
+	float:right;
+}
+
+.aligncenter {
+	display: block;
+}
+
+.no-frame {
+	border: 0!important;
+	border-radius: 0 !important;
+	box-shadow: none !important;
+}
+
+.textcenter { text-align: center; }
+.textleft { text-align: left; }
+.textright { text-align: right; }
+
+.italic { font-style: italic; }
+
+p.break {
+	min-height: 1rem;
+	visibility: hidden;
+}
+.is--underline { text-decoration: underline; }
+
+body .disableLink {
+	pointer-events: none;
+	cursor: default;
+}
+
+
+
+/***************************************************************** 
+ *********************** Site Specific CSS ***********************
+ *****************************************************************/
+
+
+/* ------------------------ 
+   Variables
+------------------------ */
+
+$defaultfont : "Times New Roman", Times, serif;
+$defaultcolor : #000000;
+
+@mixin customfont() {
+	
+}
+
+.smoothie { //text rendering fix stuff
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+@mixin smoothie(){
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+%imgdefaults {
+	visibility: visible; //placeholder for SASS error reasons
+}
+
+@mixin disablelink{
+	pointer-events: none;
+	cursor: default;
+}
+
+
+/* ------------------------ 
+   Mobile-first definitions
+------------------------ */
+
+
+/* ------------------------ 
+   Typography (and primary body style)
+------------------------ */
+body { 
+	color: $defaultcolor;
+	font: 16px/24px $defaultfont;
+	min-width: 320px;
+	text-align:center; 
+
+	@include customfont();
+
+}
+
+p {
+
+}
+
+ul, ol, dl {
+	
+}
+
+li {
+	
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+}
+
+h1 {
+
+}
+
+h2 {
+
+}
+
+h3 {
+
+}
+
+h4, h5, h6 { }
+
+a sup , h1 > sup , h2 > sup , h3 > sup , h4 > sup , h5 > sup{
+	display:inline-block;
+	line-height:normal;
+	vertical-align:top;
+	position: static;
+}
+
+blockquote {
+	
+}
+
+
+/* ------------------------ 
+Common/UI elements (images, video, buttons, etc)
+------------------------ */
+
+
+video{
+	max-width: 100%;
+	height: auto;
+}
+
+.back-to-top {
+	text-align: right;
+	display: block;
+}
+
+img.alignright , img.alignleft, img.aligncenter, img.alignnone .caption {
+    display: block;
+    height: auto;
+    margin: 0 auto 1em;
+    max-width: 100%;
+}
+
+.wp-caption{
+	max-width: 95%;
+	img{
+		width: 100%;
+		height: auto;
+	}
+}
+
+
+
+img.alignleft, img.alignright, img.aligncenter, .yes-frame{
+	@extend %imgdefaults;
+}
+
+
+.button, .buttons a {
+	cursor: pointer;
+	display: inline-block;
+	position: relative;
+	text-align: center;	
+	text-decoration: none;
+}
+
+
+form.cform .sendbutton{
+	border:0;
+}
+
+.disclaimer {
+	font-size: 11px;
+	font-style: italic;
+}
+
+
+
+
+/* ***************************************** */
+/* ----------- MODELS TAG ------------------ */
+/* ***************************************** */
+span.model_tag,span.models_tag{
+	position: relative;
+	display: block;
+	margin:1.25em auto 1em;
+	max-width: 100%;
+	
+	@extend %imgdefaults;
+	
+	img.alignleft , img.alignright , img.aligncenter{
+		float:none;
+		margin:0;
+		border:0;
+		max-width: 100%;
+		border-radius: 0;
+		box-shadow: none;
+	}
+	&.alignleft , &.alignright{
+		float:none;
+		margin: 0 auto 1.5em;
+	}
+	&:before{
+		position: absolute;
+		right:0;
+		content:"model";
+		font-size: 0.85em;
+		padding-right:10px;
+		color:#ffffff;
+		text-align: right;
+		bottom:0;
+		text-shadow: 1px 1px 0px rgba(0,0,0,0.5);
+
+	}
+}
+span.models_tag{
+	&:before{
+		content:"models";
+	}
+}
+
+
+
+/* ***************************************** */
+/* --------------- Layouts ----------------- */
+/* ***************************************** */
+
+
+/* -----------------------
+	Basic layout
+----------------------- */
+
+.container, .container-full { position: relative; }
+
+.container {
+	max-width: 980px;
+	margin: 0 auto;
+	text-align: left;
+}
+
+
+
+/* ------------------------ 
+	Header 
+------------------------ */
+
+
+/* ------------------------ 
+	Nav 
+------------------------ */
+
+
+/* ------------------------ 
+	Content 
+------------------------ */
+
+
+/* ------------------------ 
+	Aside 
+------------------------ */
+
+
+/* ------------------------
+	Footer Layout 
+------------------------ */
+
+
+/* ------------------------ 
+	Forms & Form Elements
+------------------------ */
+
+p.linklove { display: none; }
+
+
+
+/* ***************************************** */
+/* ---------- Specific Templates ----------- */
+/* ***************************************** */
+
+/* ------------------------
+	Home Page 
+------------------------ */
+
+
+/* ------------------------
+	Blog/Category/Archives
+------------------------ */
+
+
+
+/***************************************************************** 
+ ************************* Media Queries *************************
+ *****************************************************************/
+ 
+ @media only screen and (max-width: 600px) {
+
+	.hidden-phone { display: none; }	
+
+}
+
+/****************************************************************/
+/* ----------------------- TABLET ---------------------------- */
+/**************************************************************/
+@media only screen and (min-width : 767px){
+
+	/**********************************************/
+	/* ----------- MODELS TAG ------------------ */
+	/********************************************/
+	span.model_tag,span.models_tag{
+		&.alignleft{
+			float:left;
+			margin: 0.5em 1em 1em 0px;
+		}
+		&.alignright{
+			float:right;
+			margin: 0.5em 0px 1em 1em;
+		}
+	}
+
+
+	/**********************************************/
+	/* ----------- IMG RESET ------------------ */
+	/********************************************/
+	
+	img.alignleft { float: left; }
+	img.alignright { float: right; }
+	
+	.content {
+		img.alignright, img.alignleft {
+			&:not(.full-img) {
+				margin-bottom: 1em;
+				max-width: 50%;
+			}
+		}
+		
+		img.alignright{ margin-left: 1em; }
+		img.alignleft{ margin-right: 1em; }
+	}
+	
+	
+}
+
+@media only screen and (min-width: 601px) and (max-width: 979px) {
+	
+	.hidden-tablet { display: none; }
+
+}
+
+/****************************************************************/
+/* ----------------------- Desktop --------------------------- */
+/**************************************************************/
+
+@media only screen and (min-width : 980px){
+	
+	.hidden-desktop { display: none; }
+
+}
+
+
+@import '_helper.scss';

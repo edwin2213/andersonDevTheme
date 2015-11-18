@@ -1,0 +1,7 @@
+.compat-field-model_tag .field{
+	width: 100%!important;
+}
+
+.compat-field-model_tag .field input[type="text"]{
+	width: 65%!important;
+}
